@@ -1,0 +1,23 @@
+.empForm__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.empForm__container .empForm__input {
+  width: 80%;
+  height: 40px;
+  padding: 2px 10px;
+  border: 2px solid var(--secondary-bg-color);
+  border-radius: 20px;
+  font-size: 1rem;
+}
+.empForm__container .empForm__btn {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-fg-color);
+  border: 2px solid var(--secondary-bg-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}/*# sourceMappingURL=employee-form.component.css.map */

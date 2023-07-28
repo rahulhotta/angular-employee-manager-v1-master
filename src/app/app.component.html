@@ -1,0 +1,15 @@
+<app-login-page
+  *ngIf="!isLoggedIn"
+  (currentUserEvent)="currentUser = $event"
+  (isLoggedInEvent)="isLoggedIn = $event"
+></app-login-page>
+
+<div *ngIf="isLoggedIn">
+  <app-navbar
+    [currentUser]="currentUser"
+    (currentPageEmmiter)="currentpage = $event"
+    (logOutEmmiter)="isLoggedIn = $event"
+  >
+  </app-navbar>
+  <app-home [currentPage]="currentpage"></app-home>
+</div>

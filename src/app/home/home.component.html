@@ -1,0 +1,6 @@
+<div class="home__container" [ngSwitch]="currentPage">
+    <!-- current page is {{currentPage}} -->
+    <app-table *ngSwitchCase="'Home'"></app-table>
+    <app-graph *ngSwitchCase="'Graph'"></app-graph>
+    <app-cards-list *ngSwitchCase="'Cards'"></app-cards-list>
+</div>

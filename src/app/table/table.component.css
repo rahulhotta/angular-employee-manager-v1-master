@@ -1,0 +1,16 @@
+.table__container {
+  border: 2px solid var(--secondary-bg-color);
+}
+.table__container th, .table__container td {
+  padding: 10px 20px;
+  border: 2px solid black;
+  text-align: center;
+}
+.table__container .emp__table_btn {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-fg-color);
+  border: 2px solid var(--secondary-bg-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}/*# sourceMappingURL=table.component.css.map */

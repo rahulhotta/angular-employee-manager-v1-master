@@ -1,0 +1,62 @@
+<div class="loginPage__container">
+  <div class="loginPage__left">
+    <img src="../../assets/Images/Login/Login_page_img.png" alt="login" />
+  </div>
+
+  <form
+    class="loginPage__form"
+    #userForm="ngForm"
+    (submit)="loginFormSubmitHandler($event)"
+  >
+    <!-- <label mdbInput class="form-label" for="typeEmail">Email input</label> -->
+    <input
+      mdbInput
+      mdbLabel
+      type="email"
+      id="typeEmail"
+      class="form-control login__input"
+      placeholder="Enter Email"
+      type="email"
+      #emailRef="ngModel"
+      required
+      name="email"
+      pattern="^(.+)@(.+)$"
+      [(ngModel)]="currentUserEmail"
+    />
+    <small
+      class="noInputError"
+      [ngClass]="{ inputError: emailRef.invalid && emailRef.touched }"
+    >
+      Please enter a valid email
+    </small>
+
+    <!-- <label mdbInput class="form-label" for="typeEmail">Password input</label> -->
+    <input
+      mdbInput
+      matInput
+      placeholder="Enter Password"
+      type="password"
+      class="form-control login__input"
+      required
+      name="password"
+      #passwordRef="ngModel"
+      [(ngModel)]="currentUserPassword"
+    />
+    <small
+      class="noInputError"
+      [ngClass]="{ inputError: passwordRef.invalid && passwordRef.touched }"
+    >
+      Please enter a valid Password
+    </small>
+    <button
+      type="submit"
+      class="loginPage__button"
+      [disabled]="userForm.invalid"
+    >
+      Login
+    </button>
+    <p class="login__error">
+      {{loginErrorMessage}}
+    </p>
+  </form>
+</div>

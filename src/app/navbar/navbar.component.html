@@ -1,0 +1,22 @@
+<div class="navbar__container">
+  <div class="navbar__left">
+    <app-pop-up-modal [formType]="'Add'">
+      <button class="btn btn-primary"><i class="bi bi-list"></i></button>
+    </app-pop-up-modal>
+  </div>
+  
+  <div
+    class="navbar__right"
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <img src="{{ currentUser.imageUrl }}" alt="userImage" class="navbar__img" />
+  </div>
+  <ul class="dropdown-menu">
+    <li>
+      <button class="dropdown-item" (click)="logOutHandler()">Logout</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,20 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-employee-form
+      [modal]="modal"
+      [formType]="formType"
+      [empId]="empId"
+	  (editedEmpDataEmitter)="catchEditedData($event)"
+    ></app-employee-form>
+  </div>
+</ng-template>
+
+<div (click)="open(content)"><ng-content></ng-content></div>

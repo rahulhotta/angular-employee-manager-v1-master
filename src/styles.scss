@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+// @import '~@fortawesome/fontawesome-free/scss/solid.scss';
+// @import '~@fortawesome/fontawesome-free/scss/regular.scss';
+// @import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+// @import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-bg-color: rgb(215, 224, 229);
+    --secondary-bg-color: rgb(8,44,127);
+    --primary-fg-color: rgb(255,255,255);
+    --secondary-fg-color: rgb(223, 249, 255);
+    --primary-box-shadow:  rgba(64, 79, 250, 0.4) -5px 5px, rgba(46, 65, 240, 0.3) -10px 10px, rgba(46, 85, 240, 0.2) -15px 15px, rgba(46, 143, 240, 0.1) -20px 20px, rgba(46, 162, 240, 0.05) -25px 25px;;
+  }
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

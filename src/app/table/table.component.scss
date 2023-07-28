@@ -1,0 +1,17 @@
+.table__container{
+    border: 2px solid var(--secondary-bg-color);
+    box-shadow: var(--primary-box-shadow);
+    th,td{
+        padding: 10px 20px;
+        border: 2px solid black;
+        text-align: center;
+    }
+    .emp__table_btn{
+        background-color: var(--secondary-bg-color);
+        color: var(--secondary-fg-color);
+        border: 2px solid var(--secondary-bg-color);
+        padding: 5px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}

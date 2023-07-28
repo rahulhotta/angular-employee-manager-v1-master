@@ -1,0 +1,33 @@
+<div
+  class="card__list_container"
+  *ngIf="empList.length !== 0; else NoCardBlock"
+>
+  <div class="card__container" *ngFor="let emp of empList">
+    <div class="card__img">
+      <img src="{{ emp.empPhoto }}" alt="employee" srcset="" />
+    </div>
+    <div class="card__body">
+      <h6>Name: {{ emp.empName }}</h6>
+      <h6>D.O.J: {{ emp.empDOJ }}</h6>
+      <h6>Project: {{ emp.empProject }}</h6>
+    </div>
+    <div class="card__footer">
+      <app-pop-up-modal
+        [formType]="'Edit'"
+        [empId]="emp.empId"
+        (editedDataEventEmmiter)="editHandler(emp.empId, $event)"
+      >
+        <button class="card__btn">
+          <i class="bi bi-pencil-square"></i>
+        </button>
+      </app-pop-up-modal>
+      <button class="card__btn" (click)="deleteHandler(emp.empId)"> 
+        <i class="bi bi-trash"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #NoCardBlock>
+  <h1>You dont have any data</h1>
+</ng-template>

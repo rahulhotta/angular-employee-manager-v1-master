@@ -1,0 +1,91 @@
+<!-- Add form -->
+<form
+  class="empForm__container"
+  novalidate
+  (submit)="addHandler()"
+  *ngIf="formType === 'Add'"
+>
+  <input
+    type="text"
+    placeholder="Employee Name"
+    class="empForm__input"
+    name="emp_name_input"
+    [(ngModel)]="currentEmp.empName"
+  />
+  <input
+    type="date"
+    placeholder="Employee D.O.J"
+    name="emp_date_input"
+    class="empForm__input"
+    [(ngModel)]="currentEmp.empDOJ"
+  />
+  <input
+    type="text"
+    placeholder="Employee project"
+    name="emp_project_input"
+    class="empForm__input"
+    [(ngModel)]="currentEmp.empProject"
+  />
+  <input
+    type="file"
+    class="empForm__input"
+    name="emp_photo_input"
+    [(ngModel)]="currentEmp.empImage"
+  />
+  <div class="empForm__btns__container">
+    <button type="submit" class="empForm__btn">Add</button>
+    <button
+      type="button"
+      class="empForm__btn"
+      (click)="modal.close('Save click')"
+    >
+      Close
+    </button>
+  </div>
+</form>
+
+<!-- Edit form -->
+<form
+  class="empForm__container"
+  novalidate
+  (submit)="editHandler()"
+  *ngIf="formType === 'Edit'"
+>
+  <input
+    type="text"
+    placeholder="Employee Name"
+    class="empForm__input"
+    name="emp_name_input"
+    [(ngModel)]="editedEmployeeData.empName"
+  />
+  <input
+    type="date"
+    placeholder="Employee D.O.J"
+    name="emp_date_input"
+    class="empForm__input"
+    [(ngModel)]="editedEmployeeData.empDOJ"
+  />
+  <input
+    type="text"
+    placeholder="Employee project"
+    name="emp_project_input"
+    class="empForm__input"
+    [(ngModel)]="editedEmployeeData.empProject"
+  />
+  <input
+    type="file"
+    class="empForm__input"
+    name="emp_photo_input"
+    [(ngModel)]="editedEmployeeData.empImage"
+  />
+  <div class="empForm__btns__container">
+    <button type="submit" class="empForm__btn">Edit</button>
+    <button
+      type="button"
+      class="empForm__btn"
+      (click)="modal.close('Save click')"
+    >
+      Close
+    </button>
+  </div>
+</form>

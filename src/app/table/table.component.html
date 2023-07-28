@@ -1,0 +1,29 @@
+<h1 *ngIf="allEmployees.length === 0; else table">You dont have any data</h1>
+<ng-template #table>
+<table class="table__container" >
+  <th>Name</th>
+  <th>Project</th>
+  <th>D.O.J</th>
+  <th>Image</th>
+  <th>Edit</th>
+  <th>Delete</th>
+  <tr *ngFor="let employee of allEmployees">
+    <td>{{ employee.empName }}</td>
+    <td>{{ employee.empProject }}</td>
+    <td>{{ employee.empDOJ }}</td>
+    <td><img src="{{ employee.empImage }}" alt="employee" /></td>
+    <td>
+      <app-pop-up-modal  [formType]="'Edit'" [empId]="employee.empId" (editedDataEventEmmiter)="editHandler(employee.empId,$event)">
+        <button class="emp__table_btn">
+          <i class="bi bi-pencil-square" ></i>
+        </button>
+      </app-pop-up-modal>     
+    </td>
+    <td>
+      <button class="emp__table_btn" (click)="deleteHandler(employee.empId)">
+        <i class="bi bi-trash"></i>
+      </button>
+    </td>
+  </tr>
+</table>
+</ng-template>
